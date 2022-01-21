@@ -10,6 +10,10 @@ keywords = ["windows", "syscall", "no_std", "no-std", "ntapi"]
 categories = ["windows", "no-std"]
 repository = "https://github.com/felix-rs/ntcall-rs"
 
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = ["aarch64-pc-windows-msvc", "i686-pc-windows-msvc", "x86_64-pc-windows-msvc"]
+
 [build-dependencies]
 ntapi = "0.3.6"
 
