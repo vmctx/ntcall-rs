@@ -1,0 +1,39 @@
+[package]
+name = "ntcall"
+version = "0.1.0"
+description = "Crate for calling NT System Calls easily"
+authors = ["felix <41162644+felix-rs@users.noreply.github.com>"]
+edition = "2021"
+readme = "README.md"
+license-file = "LICENSE"
+keywords = ["windows", "syscall", "no_std", "no-std", "ntapi"]
+categories = ["windows", "no-std"]
+repository = "https://github.com/felix-rs/ntcall-rs"
+
+[build-dependencies]
+ntapi = "0.3.6"
+bindgen = "0.59.2"
+
+[build-dependencies.winapi]
+version = "0.3.9"
+default-features = false
+features = [
+    "winnt",
+    "libloaderapi"
+]
+
+[build-dependencies.iced-x86]
+version = "1.15.0"
+default-features = false
+features = ["no_std", "decoder", "nasm"]
+
+[dependencies.winapi]
+version = "0.3.9"
+default-features = false
+features = [
+    "ntdef"
+]
+
+[dependencies.ntapi]
+version = "0.3.6"
+default-features = false
