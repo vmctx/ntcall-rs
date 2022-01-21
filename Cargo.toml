@@ -12,7 +12,6 @@ repository = "https://github.com/felix-rs/ntcall-rs"
 
 [build-dependencies]
 ntapi = "0.3.6"
-bindgen = "0.59.2"
 
 [build-dependencies.winapi]
 version = "0.3.9"
