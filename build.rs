@@ -50,7 +50,7 @@ fn get_syscall_id(function_addr: usize) -> Option<String> {
         if output.contains("eax") {
             return Some(format!(
                 "0x{}",
-                output.split_once("eax,")?.1.to_string().replace("h", "")
+                output.split_once("eax,")?.1.to_string().replace('h', "")
             ));
         }
     }
