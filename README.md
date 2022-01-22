@@ -7,19 +7,24 @@ Easily call NT System Calls from rust.
 [crates-badge]: https://img.shields.io/crates/v/ntcall
 [crates-url]: https://crates.io/crates/ntcall
 
-[Documentation](https://docs.rs/ntcall)
+All System Call ID’s are dumped at compile-time. To get started just import the function you would like to use and call it just like with winapi/ntapi.
 
 ## Usage
-
 To use `ntcall-rs`, first add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
 ntcall = "0.1"
 ```
+## Example
+Shutting down your PC with a System Call.
+```rust
+use ntcall::NtShutdownSystem;
 
-See [documentation](https://docs.rs/ntcall) for more details.
+const ShutdownPowerOff: u32 = 2;
 
+unsafe { NtShutdownSystem(ShutdownPowerOff); }
+```
 ## License
 
 This project is licensed under the [MIT license](LICENSE).
